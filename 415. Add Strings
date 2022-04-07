@@ -1,0 +1,31 @@
+"""
+directly convert str to int is disallowed
+construct help functions to convert str to int
+"""
+
+class Solution(object):
+    def addStrings(self, num1, num2):
+        """
+        :type num1: str
+        :type num2: str
+        :rtype: str
+        """
+        def digit_int(digit):
+            # convert single character to int
+            tool = '0123456789'
+            for j in range(10):
+                if digit == tool[j]:
+                    return j
+                
+        def str_int(num):
+            # convert str to int value
+            
+            # base case
+            if len(num) == 1:
+                return digit_int(num)
+            
+            # recursive steps
+            result = 0
+            return digit_int(num[-1]) + 10 * str_int(num[:-1])
+        
+        return str(str_int(num1) + str_int(num2))
