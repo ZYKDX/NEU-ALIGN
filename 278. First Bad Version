@@ -1,0 +1,30 @@
+"""
+take care of the management of high and low
+"""
+
+# The isBadVersion API is already defined for you.
+# @param version, an integer
+# @return a bool
+# def isBadVersion(version):
+
+class Solution(object):
+    def firstBadVersion(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        if n == 1:
+            return 1
+        if isBadVersion(1):
+            return 1
+        low = 1
+        high = n
+        guess = (low + high)
+        while low < high - 1:
+            if isBadVersion(guess):
+                high = guess
+                guess = (low + high) // 2
+            else:
+                low = guess
+                guess = (low + high) // 2
+        return high
