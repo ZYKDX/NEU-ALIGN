@@ -1,0 +1,22 @@
+"""
+easy.
+requires O(1) extra memory, not O(1) running time
+"""
+
+class Solution(object):
+    def reverseString(self, s):
+        """
+        :type s: List[str]
+        :rtype: None Do not return anything, modify s in-place instead.
+        """
+        num = len(s)
+        
+        # 2 index, from left and right
+        start = 0
+        end = len(s) - 1
+        
+        # stop: then they meet(odd) or cross(even)
+        while start <= end:
+            s[start], s[end] = s[end], s[start]
+            start += 1
+            end -= 1
