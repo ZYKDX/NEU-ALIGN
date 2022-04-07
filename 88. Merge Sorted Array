@@ -1,0 +1,52 @@
+"""
+start from the right to the left, use normal merge sorted array method
+3 index: for nums1, nums2, and the result list
+"""
+
+class Solution(object):
+    def merge(self, nums1, m, nums2, n):
+        """
+        :type nums1: List[int]
+        :type m: int
+        :type nums2: List[int]
+        :type n: int
+        :rtype: None Do not return anything, modify nums1 in-place instead.
+        """
+        # special case
+        if n == 0:
+            return -1
+        if m == 0:
+            for i in range(n):
+                nums1[i] = nums2[i]
+            return -1
+        
+        # from right to the left, need 2 index
+        # index for nums1
+        index1 = m - 1
+        # index for nums2
+        index2 = n - 1
+        # index for the result
+        index = m + n - 1
+        
+        def exchange(ls, x, y):
+            # change the xth value and yth value in list ls
+            temp = ls[x]
+            ls[x] = ls[y]
+            ls[y] = temp
+        
+        # normal comparison
+        while (index1 >= 0) and (index2 >= 0):
+            if nums1[index1] >= nums2[index2]:
+                exchange(nums1, index1, index)
+                index -= 1
+                index1 -= 1
+            else:
+                nums1[index] = nums2[index2]
+                index -= 1
+                index2 -= 1
+        # if nums2 is used up
+        if index2 < 0:
+            return -1
+        # if nums1 is used up:
+        for i in range(index + 1):
+            nums1[i] = nums2[i]
