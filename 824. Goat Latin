@@ -1,0 +1,35 @@
+"""
+The use of str.split() method and ''.join(list) method !!!
+"""
+
+class Solution(object):
+    def toGoatLatin(self, sentence):
+        """
+        :type sentence: str
+        :rtype: str
+        """
+        
+        # a list to store each word 
+        receiver = sentence.split()
+        
+        for i in range(len(receiver)):
+            
+            # if begins with vowel
+            if receiver[i][0] in 'aeiouAEIOU':
+                receiver[i] = receiver[i] + 'ma'
+            # if begins with consonant
+            # length is larger than 1
+            elif len(receiver[i]) > 1:
+                receiver[i] = receiver[i][1:] + receiver[i][0] + 'ma'
+            # if only 1 character
+            else:
+                receiver[i] = receiver[i] + 'ma'
+            # add a's
+            receiver[i] = receiver[i] + 'a' * (i + 1)
+        
+        return ' '.join(receiver)
+            
+            
+                
+        
+        
