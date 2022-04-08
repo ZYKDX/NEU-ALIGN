@@ -1,0 +1,27 @@
+"""
+see if num of A is larger than 1
+see if there are 3 consecutive L's
+"""
+
+class Solution(object):
+    def checkRecord(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        # decide if there are 2 or more A's in s
+        num_A = 0
+        for i in s:
+            if i == 'A':
+                num_A += 1
+        if num_A >1:
+            return False
+        
+        # decide if there are 3 consecutive L's in s
+        if len(s) >= 3:
+            for i in range(0,len(s) - 2):
+                if s[i:i+3] == 'LLL':
+                    return False
+        # no above conditions happen, return True
+        return True
+        
