@@ -1,0 +1,43 @@
+"""
+question is prefix... this answer is for longest common sub-string, actually harder than the question
+"""
+
+class Solution(object):
+    def longestCommonPrefix(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: str
+        """
+        def helper(str1, str2):
+            flag=True
+            for i in str1:
+                if i in str2:
+                    flag=False
+            if flag:
+                return ''
+            final=[]
+            len1=len(str1)
+            len2=len(str2)
+            for i in range(len1):
+                length_ls=[]
+                for j in range(len2):
+                    length=0
+                    ii=i
+                    jj=j
+                    while ii<len1 and jj<len2:
+                        if str1[ii]==str2[jj]:
+                            length+=1
+                            jj+=1
+                            ii+=1
+                        else:
+                            break
+                    length_ls.append(length)
+                final.append(max(length_ls))
+            for i in range(len1):
+                if final[i]==max(final):
+                    return str1[i:i+max(final)]
+            
+        result = strs[0]
+        for i in strs:
+            result = helper(result, i)
+        return result
