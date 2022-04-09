@@ -1,6 +1,8 @@
 """
 easy.
 requires O(1) extra memory, not O(1) running time
+
+time compexity not required
 """
 
 class Solution(object):
