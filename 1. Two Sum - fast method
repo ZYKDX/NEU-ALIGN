@@ -1,0 +1,24 @@
+"""
+use dictionary to accelerate
+reason: a in b takes only O(1) for dictionary
+idea:  suppose a and b are the pair 
+    build a dict to store. for a in nums, store target-a as the key, and a's index as value
+    then for later item b, if b in dict, then we get the pair a and b
+    a's index is stored as the value of target-a, and b's index could be get through the loop variable
+"""
+
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        
+        mydic = {}
+        for i in range(len(nums)):
+            if nums[i] in mydic:
+                return [i, mydic[nums[i]]]
+            else:
+                mydic[target-nums[i]] = i
+ 
