@@ -1,6 +1,8 @@
 """
 start from the right to the left, use normal merge sorted array method
 3 index: for nums1, nums2, and the result list
+
+time complexity: O(m+n) a good one
 """
 
 class Solution(object):
