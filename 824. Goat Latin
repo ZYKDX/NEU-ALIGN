@@ -1,5 +1,7 @@
 """
 The use of str.split() method and ''.join(list) method !!!
+
+time complexity not required
 """
 
 class Solution(object):
