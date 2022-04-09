@@ -1,6 +1,8 @@
 """
 longest PREFIX!!! easier!
 still need caution
+
+time complexity not required
 """
 
 class Solution(object):
