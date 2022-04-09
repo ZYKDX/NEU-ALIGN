@@ -1,5 +1,7 @@
 """
 take care of the management of high and low
+
+time complexity not required
 """
 
 # The isBadVersion API is already defined for you.
