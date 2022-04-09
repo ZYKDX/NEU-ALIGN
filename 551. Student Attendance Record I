@@ -1,6 +1,8 @@
 """
 see if num of A is larger than 1
 see if there are 3 consecutive L's
+
+time complexity not required
 """
 
 class Solution(object):
