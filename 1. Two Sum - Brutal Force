@@ -1,3 +1,9 @@
+"""
+this uses brutal force, not the fastest method. O(n^2)
+
+follow up requires faster than O(n^2)
+"""
+
 class Solution(object):
     def twoSum(self, nums, target):
         """
