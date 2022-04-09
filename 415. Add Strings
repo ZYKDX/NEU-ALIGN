@@ -1,6 +1,8 @@
 """
 directly convert str to int is disallowed
 construct help functions to convert str to int
+
+time complexity not required
 """
 
 class Solution(object):
